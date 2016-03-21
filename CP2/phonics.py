@@ -51,6 +51,10 @@ for count in range(1,num):
 print string
 
 #S->S1S2S3 | S1S2 S | S2 S | S2S3 S | epsilon
+#Sone->S1S2S3 S
+#Stwo->S1S2 (Sone | Stwo | epsilon)
+#Sthree->S2 (Sone | Stw
+#Sfour->S2S3
 #S2-> vowel | vowel_blend
 #S1-> (consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
 #S3->(consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
