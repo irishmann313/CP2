@@ -5,21 +5,20 @@ import random
 
 random.seed()
 
-consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W", "X", "Y", "Z"] #pretty obvious, currently a list of all consonants except Q
 
-consonant_blends_anywhere = ["CH", "TH", "SH", "GH", "PH", "SC", "SK", "SM", "SP", "ST"]
+consonant_blends_anywhere = ["CH", "TH", "SH", "GH", "PH", "SC", "SK", "SM", "SP", "ST"] #these are consonant blends that can be treated as one letter and can go anywhere a consonant would
 
-#consonant_blends_end_syllable = ["BB", "FF", "DD", "GG", "MM", "LL", "NN", "PP", "RR", "MB"] #end of syllables
+#consonant_blends_end_syllable = ["BB", "FF", "DD", "GG", "MM", "LL", "NN", "PP", "RR", "MB"] #end of syllables, these made the words really messy
 
-#consonant_blends_
 
-vowel_blends = ["OO", "OA", "EE", "AE", "EA", "AE", "AI", "AO", "AU", "EI", "EO", "EU", "IE", "IA", "IO", "IU", "OE", "OI", "OU", "UA", "UE", "UO", "UI"]
+vowel_blends = ["OO", "OA", "EE", "AE", "EA", "AE", "AI", "AO", "AU", "EI", "EO", "EU", "IE", "IA", "IO", "IU", "OE", "OI", "OU", "UA", "UE", "UO", "UI"] #two vowels, some are more common than others, and these tend to make the words look/feel ugly
 
-vowels = ["A", "E", "I", "O", "U"]
+vowels = ["A", "E", "I", "O", "U"] #list of all vowels, not sure what to do about Y
 
-consonant_blends_start_syllable = ["SL", "SN", "WH"] #start of syllables
+consonant_blends_start_syllable = ["SL", "SN", "WH"] #consonant blends that can be treated as one letter but can only start a syllable
 
-hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels, consonants+consonant_blends_anywhere]
+hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels, consonants+consonant_blends_anywhere] 
 
 
 def pick_one(group, last):
