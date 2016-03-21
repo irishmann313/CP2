@@ -9,14 +9,18 @@ consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "
 
 consonant_blends_anywhere = ["CH", "TH", "SH", "GH", "PH", "SC", "SK", "SM", "SP", "ST"] #these are consonant blends that can be treated as one letter and can go anywhere a consonant would
 
-consonant_blends_end_syllable = ["BB", "FF", "DD", "GG", "MM", "LL", "NN", "PP", "RR"] #end of syllables, these made the words really messy
+consonant_blends_end_syllable = ["BB", "FF", "DD", "GG", "MM", "LL", "NN", "PP", "RR", "BS", "CS", "DS" ,"FS", "GS", "HS", "KS", "LS", "MS", "NS", "PS", "SS", "TS", "VS", "WS", "YS", "GHS", "PHS", "SCS", "SKS", "SPS", "STS" ] #end of syllables, these made the words really messy
 
+for con in consonants:
+	if con != "R" and con != "L" and con != "H"i and con != "W":
+		consonant_blends_end_syllable.append("L"+con)
+		consonant_blends_end_syllable.append("R"+con)
 
 vowel_blends = ["OO", "OA", "EE", "EA", "AE", "AI", "AO", "AU", "EI", "EO", "EU", "IE", "IA", "IO", "IU", "OE", "OI", "OU", "UA", "UE", "UO", "UI"] #two vowels, some are more common than others, and these tend to make the words look/feel ugly
 
 vowels = ["A", "E", "I", "O", "U"] #list of all vowels, not sure what to do about Y
 
-consonant_blends_start_syllable = ["SL", "SN", "WH"] #consonant blends that can be treated as one letter but can only start a syllable
+consonant_blends_start_syllable = ["SL", "SN", "WH", "QU"] #consonant blends that can be treated as one letter but can only start a syllable
 
 hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels+vowel_blends, consonants+consonant_blends_end_syllable+consonant_blends_anywhere] #helps keep letter possibilities organized 
 
