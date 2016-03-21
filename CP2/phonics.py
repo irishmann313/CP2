@@ -18,19 +18,22 @@ vowels = ["A", "E", "I", "O", "U"] #list of all vowels, not sure what to do abou
 
 consonant_blends_start_syllable = ["SL", "SN", "WH"] #consonant blends that can be treated as one letter but can only start a syllable
 
-hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels, consonants+consonant_blends_anywhere] 
+hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels, consonants+consonant_blends_anywhere] #helps keep letter possibilities organized 
 
 
+#function that returns a random element from a list, while avoiding the most recent element (if we decide to add that functionality)
 def pick_one(group, last):
-	size = len(group)
-	index = random.randint(0, size-1)
+	index = random.randint(0, len(group)-1)
+	#this part prevents a repeat
 	while group[index] == last:
 		index = random.randint(0, size-1)
 	return group[index]
 
+#have to initialize the string to += it
 string=""
 
-num = random.randint(1,5)
+
+num = random.randint(1,5) #number of syllables, 1-5
 for count in range(1,num):
 	pick = random.randint(1,3)
 
@@ -43,18 +46,9 @@ for count in range(1,num):
 	elif pick==3:
 		print 'vowel cons'
 		string += pick_one(hierarchy[1], "") + pick_one(hierarchy[2],"")
-
-#else
-#	print 'epsilon'
-#	string+=""
 	
 
 print string
-
-if random.randint(0,1):
-	print 'yes'
-else:
-	print 'no'
 
 #S->S1S2S3 | S1S2 S | S2 S | S2S3 S | epsilon
 #S2-> vowel | vowel_blend
@@ -63,4 +57,3 @@ else:
 
 
 
-random.randint(1, 10)
