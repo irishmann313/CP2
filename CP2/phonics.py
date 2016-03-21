@@ -12,7 +12,7 @@ consonant_blends_anywhere = ["CH", "TH", "SH", "GH", "PH", "SC", "SK", "SM", "SP
 #consonant_blends_end_syllable = ["BB", "FF", "DD", "GG", "MM", "LL", "NN", "PP", "RR", "MB"] #end of syllables, these made the words really messy
 
 
-vowel_blends = ["OO", "OA", "EE", "AE", "EA", "AE", "AI", "AO", "AU", "EI", "EO", "EU", "IE", "IA", "IO", "IU", "OE", "OI", "OU", "UA", "UE", "UO", "UI"] #two vowels, some are more common than others, and these tend to make the words look/feel ugly
+vowel_blends = ["OO", "OA", "EE", "EA", "AE", "AI", "AO", "AU", "EI", "EO", "EU", "IE", "IA", "IO", "IU", "OE", "OI", "OU", "UA", "UE", "UO", "UI"] #two vowels, some are more common than others, and these tend to make the words look/feel ugly
 
 vowels = ["A", "E", "I", "O", "U"] #list of all vowels, not sure what to do about Y
 
@@ -53,8 +53,8 @@ print string
 #S->S1S2S3 | S1S2 S | S2 S | S2S3 S | epsilon
 #Sone->S1S2S3 S
 #Stwo->S1S2 (Sone | Stwo | epsilon)
-#Sthree->S2 (Sone | Stw
-#Sfour->S2S3
+#Sthree->S2 (Sone | Stwo | epsilon)
+#Sfour->S2S3 (S)
 #S2-> vowel | vowel_blend
 #S1-> (consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
 #S3->(consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
