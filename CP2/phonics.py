@@ -1,4 +1,5 @@
 #Nancy McNamara, Brian Mann
+#CP2, phonetic word generator
 
 import random
 
