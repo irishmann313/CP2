@@ -18,7 +18,7 @@ vowels = ["A", "E", "I", "O", "U"] #list of all vowels, not sure what to do abou
 
 consonant_blends_start_syllable = ["SL", "SN", "WH"] #consonant blends that can be treated as one letter but can only start a syllable
 
-hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels, consonants+consonant_blends_anywhere] #helps keep letter possibilities organized 
+hierarchy = [consonant_blends_anywhere+consonants+consonant_blends_start_syllable, vowels+vowel_blends, consonants+consonant_blends_anywhere] #helps keep letter possibilities organized 
 
 
 #function that returns a random element from a list, while avoiding the most recent element (if we decide to add that functionality)
@@ -33,10 +33,9 @@ def pick_one(group, last):
 string=""
 
 
-num = random.randint(1,5) #number of syllables, 1-5
-for count in range(1,num):
+num = random.randint(1,4) #number of syllables, 1-5
+for count in range(0,num):
 	pick = random.randint(1,3)
-
 	if pick==1:
 		print 'cons vowel cons'
 		string += pick_one(hierarchy[0], "") + pick_one(hierarchy[1], "") + pick_one(hierarchy[2],"")
@@ -46,15 +45,16 @@ for count in range(1,num):
 	elif pick==3:
 		print 'vowel cons'
 		string += pick_one(hierarchy[1], "") + pick_one(hierarchy[2],"")
-	
-
+	elif pick==4:
+		print 'vowel'
+		string += pick_one(hierarchy[1])
 print string
 
 #S->S1S2S3 | S1S2 S | S2 S | S2S3 S | epsilon
-#Sone->S1S2S3 S
-#Stwo->S1S2 (Sone | Stwo | epsilon)
-#Sthree->S2 (Sone | Stwo | epsilon)
-#Sfour->S2S3 (S)
+#Sone->S1S2S3 S can be followed by anything
+#Stwo->S1S2 (Sone | Stwo | epsilon)  consonant vowel can be followed by anything but vowel consonant and vowel
+#Sthree->S2 (Sone | Stwo | epsilon) vowel can be followed be anything but vowel and vowel consonant
+#Sfour->S2S3 (S) can be followed by anything
 #S2-> vowel | vowel_blend
 #S1-> (consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
 #S3->(consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
