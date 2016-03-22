@@ -70,13 +70,13 @@ for count in range(0,num):
 		maximum=2
 print string
 
-#S->S1S2S3 | S1S2 S | S2 S | S2S3 S | epsilon
-#Sone->S1S2S3 S can be followed by anything
-#Stwo->S1S2 (Sone | Stwo | epsilon)  consonant vowel can be followed by anything but vowel consonant and vowel
-#Sthree->S2 (Sone | Stwo | epsilon) vowel can be followed be anything but vowel and vowel consonant
-#Sfour->S2S3 (S) can be followed by anything
+#S->Sone | Stwo | Sthree | Sfour 
+#Sone->S1S2S3S | S1S2S3    can be followed by anything
+#Stwo->S1S2Sone | S1S2Stwo | S1S2     consonant vowel can be followed by anything but vowel consonant and vowel
+#Sthree->S2Sone | S2Stwo       vowel can be followed be anything but vowel and vowel consonant
+#Sfour->S2S3S | S2S3      can be followed by anything
 #S2-> vowel | vowel_blend
-#S1-> (consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
+#S1-> (consonant | consonant_blend_anywhere | consonant_blend_start_syllable)
 #S3->(consonant | consonant_blend_anywhere | consonant_blend_end_syllable)
 
 
