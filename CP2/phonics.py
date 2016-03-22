@@ -73,7 +73,7 @@ print string
 #S->Sone | Stwo | Sthree | Sfour 
 #Sone->S1S2S3S | S1S2S3    can be followed by anything
 #Stwo->S1S2Sone | S1S2Stwo | S1S2     consonant vowel can be followed by anything but vowel consonant and vowel
-#Sthree->S2Sone | S2Stwo       vowel can be followed be anything but vowel and vowel consonant
+#Sthree->S2Sone | S2Stwo       vowel can be followed by anything but vowel and vowel consonant
 #Sfour->S2S3S | S2S3      can be followed by anything
 #S2-> vowel | vowel_blend
 #S1->consonant | consonant_blend_anywhere | consonant_blend_start_syllable
