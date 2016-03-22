@@ -45,7 +45,7 @@ guy=" "
 
 minimum=1
 maximum=4
-num = random.randint(1,4) #number of syllables, 1-5
+num = random.randint(1,4) #number of syllables, 1-4
 for count in range(0,num):
 	pick = random.randint(minimum,maximum)
 	if pick==1: 
